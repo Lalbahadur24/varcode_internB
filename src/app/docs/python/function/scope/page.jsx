@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Scope() {
-  const dq = String.fromCharCode(34);
+  const dq = String.fromCharCode("34");
 
   // Examples
   const exLocal = `def myfunc():
@@ -74,112 +74,149 @@ def outer():
 outer()
 print("Global:", x)`;
 
+  const codeClass =
+    "mt-3 border border-gray-200 bg-white rounded-lg p-4 font-mono text-sm leading-7 overflow-x-auto border-l-4 border-[#4a0080]";
+
   return (
-    <article className="max-w-4xl mx-auto p-6 space-y-10">
-      <h1 className="text-4xl font-bold">Python Scope — Full Detailed Notes</h1>
+    <div className="space-y-6">
+      <h1 className="text-4xl font-extrabold text-[#4a0080]">
+        Python Scope — Full Detailed Notes
+      </h1>
 
-      {/* INTRO */}
-      <section>
-        <h2 className="text-2xl font-semibold">What is Scope?</h2>
-        <p className="mt-2">
-          <strong>Scope</strong> refers to the region of a program where a variable is
-          accessible. A variable is only available from inside the region where it is
-          created.
-        </p>
-        <p className="mt-2">
-          Understanding scope helps you control variable access and avoid conflicts
-          between local and global names.
-        </p>
-      </section>
+      <p className="text-slate-700 leading-relaxed">
+        <strong>Scope</strong> defines where a variable is accessible. A
+        variable can only be used inside the region where it is created.
+      </p>
 
-      {/* LOCAL SCOPE */}
-      <section>
-        <h2 className="text-2xl font-semibold">Local Scope</h2>
-        <p className="mt-2">
-          A variable created <strong>inside a function</strong> is said to be in the{" "}
-          <strong>local scope</strong>. It can only be accessed from within that function.
-        </p>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exLocal}</code></pre>
+      <div className="space-y-10 text-slate-700 leading-relaxed">
+        {/* INTRO */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            What is Scope?
+          </h2>
+          <p className="mt-2">
+            Understanding scope helps you control variable access and avoid
+            conflicts between local and global names.
+          </p>
+        </section>
 
-        <h3 className="text-xl font-semibold mt-4">Local Scope inside Inner Functions</h3>
-        <p className="mt-2">
-          Inner functions can access variables from their parent function.
-        </p>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exInner}</code></pre>
-      </section>
+        {/* LOCAL */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">Local Scope</h2>
+          <p className="mt-2">
+            A variable inside a function exists only within that function.
+          </p>
+          <pre className={codeClass}>
+            <code>{exLocal}</code>
+          </pre>
 
-      {/* GLOBAL SCOPE */}
-      <section>
-        <h2 className="text-2xl font-semibold">Global Scope</h2>
-        <p className="mt-2">
-          A variable created outside any function belongs to the{" "}
-          <strong>global scope</strong>, and can be accessed from anywhere in the code.
-        </p>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exGlobal}</code></pre>
+          <h3 className="text-xl font-semibold mt-4">
+            Local Scope inside Inner Functions
+          </h3>
+          <p className="mt-2">
+            Inner functions can access variables from their parent function.
+          </p>
+          <pre className={codeClass}>
+            <code>{exInner}</code>
+          </pre>
+        </section>
 
-        <h3 className="text-xl font-semibold mt-4">Same Variable Name (Local vs Global)</h3>
-        <p className="mt-2">
-          If a variable exists both inside and outside a function, they are treated as{" "}
-          <strong>different variables</strong>.
-        </p>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exNaming}</code></pre>
-      </section>
+        {/* GLOBAL */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Global Scope
+          </h2>
+          <p className="mt-2">
+            A variable created outside any function belongs to the global scope
+            and can be accessed anywhere.
+          </p>
+          <pre className={codeClass}>
+            <code>{exGlobal}</code>
+          </pre>
 
-      {/* GLOBAL KEYWORD */}
-      <section>
-        <h2 className="text-2xl font-semibold">The global Keyword</h2>
-        <p className="mt-2">
-          You can make a variable inside a function become global by using the{" "}
-          <strong>global</strong> keyword.
-        </p>
+          <h3 className="text-xl font-semibold mt-4">
+            Same Variable Name (Local vs Global)
+          </h3>
+          <p className="mt-2">
+            Local and global variables with the same name are treated
+            separately.
+          </p>
+          <pre className={codeClass}>
+            <code>{exNaming}</code>
+          </pre>
+        </section>
 
-        <h3 className="text-xl font-semibold mt-4">Create a Global Variable from Inside a Function</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exGlobalKeyword}</code></pre>
+        {/* GLOBAL KEYWORD */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            The global Keyword
+          </h2>
+          <p className="mt-2">
+            Use <strong>global</strong> to make a variable inside a function
+            become global.
+          </p>
 
-        <h3 className="text-xl font-semibold mt-4">Modify a Global Variable from Inside a Function</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exChangeGlobal}</code></pre>
-      </section>
+          <h3 className="text-xl font-semibold mt-4">Create Global Variable</h3>
+          <pre className={codeClass}>
+            <code>{exGlobalKeyword}</code>
+          </pre>
 
-      {/* NONLOCAL KEYWORD */}
-      <section>
-        <h2 className="text-2xl font-semibold">The nonlocal Keyword</h2>
-        <p className="mt-2">
-          The <strong>nonlocal</strong> keyword lets you access variables from an
-          enclosing (outer) function inside a nested function.
-        </p>
-        <p className="mt-2">
-          This is useful when you need to modify a variable defined in the outer
-          function.
-        </p>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exNonlocal}</code></pre>
-      </section>
+          <h3 className="text-xl font-semibold mt-4">Modify Global Variable</h3>
+          <pre className={codeClass}>
+            <code>{exChangeGlobal}</code>
+          </pre>
+        </section>
 
-      {/* LEGB RULE */}
-      <section>
-        <h2 className="text-2xl font-semibold">The LEGB Rule</h2>
-        <p className="mt-2">
-          Python searches for variables in the following order (LEGB):
-        </p>
-        <ul className="list-disc ml-6 mt-2">
-          <li><strong>L – Local</strong>: Inside the current function</li>
-          <li><strong>E – Enclosing</strong>: Inside any outer functions</li>
-          <li><strong>G – Global</strong>: At the top level of the script</li>
-          <li><strong>B – Built-in</strong>: Python’s built-in names</li>
-        </ul>
+        {/* NONLOCAL */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            The nonlocal Keyword
+          </h2>
+          <p className="mt-2">
+            <strong>nonlocal</strong> lets you modify variables from an
+            enclosing (outer) function within a nested function.
+          </p>
+          <pre className={codeClass}>
+            <code>{exNonlocal}</code>
+          </pre>
+        </section>
 
-        <h3 className="text-xl font-semibold mt-4">Example Demonstrating LEGB</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exLEGB}</code></pre>
-      </section>
+        {/* LEGB */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            The LEGB Rule
+          </h2>
+          <p className="mt-2">Python searches variables in the order:</p>
+          <ul className="list-disc ml-6 mt-2">
+            <li>
+              <strong>L – Local</strong>
+            </li>
+            <li>
+              <strong>E – Enclosing</strong>
+            </li>
+            <li>
+              <strong>G – Global</strong>
+            </li>
+            <li>
+              <strong>B – Built-in</strong>
+            </li>
+          </ul>
 
-      {/* END */}
-      <section>
-        <h2 className="text-2xl font-semibold">Summary</h2>
-        <p className="mt-2">
-          Understanding Python's scope system ensures that your variables behave the way
-          you expect. It helps avoid naming conflicts and allows clean, maintainable
-          code.
-        </p>
-      </section>
-    </article>
+          <h3 className="text-xl font-semibold mt-4">Example</h3>
+          <pre className={codeClass}>
+            <code>{exLEGB}</code>
+          </pre>
+        </section>
+
+        {/* SUMMARY */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">Summary</h2>
+          <p className="mt-2">
+            Mastering scope prevents name conflicts and helps write clean,
+            maintainable code.
+          </p>
+        </section>
+      </div>
+    </div>
   );
 }

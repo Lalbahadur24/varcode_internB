@@ -51,94 +51,147 @@ print(sorted_students)`;
 sorted_words = sorted(words, key=lambda x: len(x))
 print(sorted_words)`;
 
+  const codeClass =
+    "mt-3 border border-gray-200 bg-white rounded-lg p-4 font-mono text-sm leading-7 overflow-x-auto border-l-4 border-[#4a0080]";
+
   return (
-    <article className="max-w-4xl mx-auto p-6 space-y-10">
-      <h1 className="text-4xl font-bold">Python Lambda — Full Notes</h1>
+    <div className="space-y-6">
+      {/* Title */}
+      <h1 className="text-4xl font-extrabold text-[#4a0080]">
+        Python Lambda — Full Notes
+      </h1>
 
-      {/* INTRO */}
-      <section>
-        <h2 className="text-2xl font-semibold">What is a Lambda Function?</h2>
-        <p className="mt-2">
-          A <strong>lambda function</strong> is a small, anonymous function in Python.
-          It can take any number of arguments, but it can only contain{" "}
-          <strong>one expression</strong>. It is often used when a short function is
-          needed for a short period of time.
-        </p>
-      </section>
+      <p className="text-slate-700 leading-relaxed">
+        A <strong>lambda function</strong> is a small, anonymous function in
+        Python. It can take any number of arguments but contains only{" "}
+        <strong>one expression</strong>.
+      </p>
 
-      {/* SYNTAX */}
-      <section>
-        <h2 className="text-2xl font-semibold">Lambda Syntax</h2>
-        <pre className="p-3 rounded border bg-gray-50 mt-2">
-          <code>lambda arguments : expression</code>
-        </pre>
-        <p className="mt-2">
-          The expression is evaluated and the result is returned automatically.
-        </p>
-      </section>
+      <div className="space-y-10 text-slate-700 leading-relaxed">
+        {/* INTRO */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            What is a Lambda Function?
+          </h2>
+          <p className="mt-2">
+            Lambda functions are used when you need a short, throwaway function.
+          </p>
+        </section>
 
-      {/* BASIC EXAMPLES */}
-      <section>
-        <h2 className="text-2xl font-semibold">Basic Lambda Examples</h2>
+        {/* SYNTAX */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Lambda Syntax
+          </h2>
+          <pre className={codeClass}>
+            <code>lambda arguments : expression</code>
+          </pre>
+          <p className="mt-2">
+            The expression is evaluated and returned automatically.
+          </p>
+        </section>
 
-        <h3 className="text-xl font-semibold mt-3">Add 10 to a number</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exAdd10}</code></pre>
+        {/* BASIC EXAMPLES */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Basic Lambda Examples
+          </h2>
 
-        <h3 className="text-xl font-semibold mt-3">Multiply two numbers</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exMultiply}</code></pre>
+          <h3 className="text-xl font-semibold mt-3">Add 10 to a number</h3>
+          <pre className={codeClass}>
+            <code>{exAdd10}</code>
+          </pre>
 
-        <h3 className="text-xl font-semibold mt-3">Sum three numbers</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exSum}</code></pre>
-      </section>
+          <h3 className="text-xl font-semibold mt-3">Multiply two numbers</h3>
+          <pre className={codeClass}>
+            <code>{exMultiply}</code>
+          </pre>
 
-      {/* WHY USE LAMBDA */}
-      <section>
-        <h2 className="text-2xl font-semibold">Why Use Lambda Functions?</h2>
-        <p className="mt-2">
-          Lambda functions are powerful when used inside other functions, especially
-          when creating <strong>function factories</strong> or <strong>closures</strong>.
-        </p>
+          <h3 className="text-xl font-semibold mt-3">Sum three numbers</h3>
+          <pre className={codeClass}>
+            <code>{exSum}</code>
+          </pre>
+        </section>
 
-        <h3 className="text-xl font-semibold mt-3">Function that returns a lambda</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exDoubler}</code></pre>
+        {/* WHY USE LAMBDA */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Why Use Lambda Functions?
+          </h2>
+          <p className="mt-2">
+            Lambda functions are extremely useful with <strong>closures</strong>{" "}
+            and function factories.
+          </p>
 
-        <h3 className="text-xl font-semibold mt-3">Triple any number</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exTripler}</code></pre>
+          <h3 className="text-xl font-semibold mt-3">
+            Function returning a lambda
+          </h3>
+          <pre className={codeClass}>
+            <code>{exDoubler}</code>
+          </pre>
 
-        <h3 className="text-xl font-semibold mt-3">Doubler + Tripler together</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exDoubleTriple}</code></pre>
-      </section>
+          <h3 className="text-xl font-semibold mt-3">Triple any number</h3>
+          <pre className={codeClass}>
+            <code>{exTripler}</code>
+          </pre>
 
-      {/* MAP FILTER SORTED */}
-      <section>
-        <h2 className="text-2xl font-semibold">Lambda with Built-in Functions</h2>
-        <p className="mt-2">Lambda works perfectly with functions like map(), filter(), and sorted().</p>
+          <h3 className="text-xl font-semibold mt-3">
+            Doubler + Tripler together
+          </h3>
+          <pre className={codeClass}>
+            <code>{exDoubleTriple}</code>
+          </pre>
+        </section>
 
-        <h3 className="text-xl font-semibold mt-4">Using lambda with map()</h3>
-        <p className="mt-1">Apply a function to every item in a list.</p>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exMap}</code></pre>
+        {/* MAP FILTER SORTED */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Lambda with Built-in Functions
+          </h2>
+          <p className="mt-2">
+            Lambda works perfectly with <strong>map()</strong>,{" "}
+            <strong>filter()</strong>, and <strong>sorted()</strong>.
+          </p>
 
-        <h3 className="text-xl font-semibold mt-4">Using lambda with filter()</h3>
-        <p className="mt-1">Filter values based on a condition.</p>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exFilter}</code></pre>
+          <h3 className="text-xl font-semibold mt-4">
+            Using lambda with map()
+          </h3>
+          <pre className={codeClass}>
+            <code>{exMap}</code>
+          </pre>
 
-        <h3 className="text-xl font-semibold mt-4">Using lambda with sorted()</h3>
-        <p className="mt-1">Custom sorting using lambda as the key.</p>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exSortedTuples}</code></pre>
+          <h3 className="text-xl font-semibold mt-4">
+            Using lambda with filter()
+          </h3>
+          <pre className={codeClass}>
+            <code>{exFilter}</code>
+          </pre>
 
-        <h3 className="text-xl font-semibold mt-4">Sort strings by length</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exSortedLength}</code></pre>
-      </section>
+          <h3 className="text-xl font-semibold mt-4">
+            Using lambda with sorted()
+          </h3>
+          <pre className={codeClass}>
+            <code>{exSortedTuples}</code>
+          </pre>
 
-      {/* END */}
-      <section>
-        <h2 className="text-2xl font-semibold">When to Use Lambda?</h2>
-        <p className="mt-2">
-          Use lambda when you need a quick, throwaway function — especially inside{" "}
-          <strong>map()</strong>, <strong>filter()</strong>, <strong>sorted()</strong>,
-          or as a function return value.
-        </p>
-      </section>
-    </article>
+          <h3 className="text-xl font-semibold mt-4">Sort strings by length</h3>
+          <pre className={codeClass}>
+            <code>{exSortedLength}</code>
+          </pre>
+        </section>
+
+        {/* END */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            When to Use Lambda?
+          </h2>
+          <p className="mt-2">
+            Use lambda when you need a small, quick function inside{" "}
+            <strong>map()</strong>, <strong>filter()</strong>,{" "}
+            <strong>sorted()</strong>, or as a return value from functions.
+          </p>
+        </section>
+      </div>
+    </div>
   );
 }

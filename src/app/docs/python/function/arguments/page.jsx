@@ -141,138 +141,240 @@ my_function("Emil")  # ERROR`;
 result = my_function(5, 10, c=15, d=20)
 print(result)`;
 
+  const codeClass =
+    "mt-3 border border-gray-200 bg-white rounded-lg p-4 font-mono text-sm leading-7 overflow-x-auto border-l-4 border-[#4a0080]";
+
   return (
-    <article className="max-w-4xl mx-auto p-6 space-y-10">
+    <div className="space-y-6">
+      {/* Title */}
+      <h1 className="text-4xl font-extrabold text-[#4a0080]">
+        Python Function Arguments — Full Cheat Sheet
+      </h1>
 
-      <h1 className="text-4xl font-bold">Python Function Arguments — Full Cheat Sheet</h1>
+      <p className="text-slate-700 leading-relaxed">
+        Function <strong>arguments</strong> are the values you pass when calling
+        a function. You define <strong>parameters</strong> in the function
+        definition and supply <strong>arguments</strong> when you call it.
+      </p>
 
-      {/* BASIC ARGUMENTS */}
-      <section>
-        <h2 className="text-2xl font-semibold">Arguments</h2>
-        <p className="mt-2">
-          Arguments are values passed into a function when calling it. You define parameters
-          in the function definition, and send arguments when calling the function.
-        </p>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exOneArg}</code></pre>
-      </section>
+      <div className="space-y-10 text-slate-700 leading-relaxed">
+        {/* BASIC ARGUMENTS */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Basic Arguments
+          </h2>
+          <p className="mt-2">
+            A simple function with one parameter, called multiple times with
+            different arguments:
+          </p>
+          <pre className={codeClass}>
+            <code>{exOneArg}</code>
+          </pre>
+        </section>
 
-      {/* PARAMETER vs ARGUMENT */}
-      <section>
-        <h2 className="text-2xl font-semibold">Parameters vs Arguments</h2>
-        <ul className="list-disc ml-6 mt-2">
-          <li><strong>Parameter</strong>: variable inside function definition</li>
-          <li><strong>Argument</strong>: actual value passed when calling</li>
-        </ul>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exParamVsArg}</code></pre>
-      </section>
+        {/* PARAMETER vs ARGUMENT */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Parameters vs Arguments
+          </h2>
+          <ul className="list-disc ml-6 mt-2">
+            <li>
+              <strong>Parameter</strong>: variable in the function definition.
+            </li>
+            <li>
+              <strong>Argument</strong>: actual value you pass during the call.
+            </li>
+          </ul>
+          <pre className={codeClass}>
+            <code>{exParamVsArg}</code>
+          </pre>
+        </section>
 
-      {/* NUMBER OF ARGUMENTS */}
-      <section>
-        <h2 className="text-2xl font-semibold">Number of Arguments</h2>
-        <p className="mt-2">Must match exactly unless defaults are used.</p>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exTwoArgs}</code></pre>
+        {/* NUMBER OF ARGUMENTS */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Number of Arguments
+          </h2>
+          <p className="mt-2">
+            By default, the number of arguments must match the number of
+            parameters.
+          </p>
+          <pre className={codeClass}>
+            <code>{exTwoArgs}</code>
+          </pre>
 
-        <h3 className="text-xl font-semibold mt-4">Error Example</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exTwoArgsError}</code></pre>
-      </section>
+          <h3 className="text-xl font-semibold mt-4">Error Example</h3>
+          <pre className={codeClass}>
+            <code>{exTwoArgsError}</code>
+          </pre>
+        </section>
 
-      {/* DEFAULT PARAMETERS */}
-      <section>
-        <h2 className="text-2xl font-semibold">Default Parameter Values</h2>
-        <p className="mt-2">If no argument is provided, the default value is used.</p>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exDefaultParam}</code></pre>
+        {/* DEFAULT PARAMETERS */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Default Parameter Values
+          </h2>
+          <p className="mt-2">
+            You can give parameters default values. If the argument is omitted,
+            the default is used.
+          </p>
+          <pre className={codeClass}>
+            <code>{exDefaultParam}</code>
+          </pre>
 
-        <h3 className="text-xl font-semibold mt-4">Another Example</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exDefaultCountry}</code></pre>
-      </section>
+          <h3 className="text-xl font-semibold mt-4">Another Example</h3>
+          <pre className={codeClass}>
+            <code>{exDefaultCountry}</code>
+          </pre>
+        </section>
 
-      {/* KEYWORD ARGUMENTS */}
-      <section>
-        <h2 className="text-2xl font-semibold">Keyword Arguments</h2>
-        <p className="mt-2">
-          You can specify parameters by name. Order does not matter.
-        </p>
+        {/* KEYWORD ARGUMENTS */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Keyword Arguments
+          </h2>
+          <p className="mt-2">
+            With <strong>keyword arguments</strong>, you specify which parameter
+            each value belongs to.
+          </p>
 
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exKeyword}</code></pre>
+          <pre className={codeClass}>
+            <code>{exKeyword}</code>
+          </pre>
 
-        <h3 className="text-xl font-semibold mt-4">Order Does Not Matter</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exKeywordAnyOrder}</code></pre>
-      </section>
+          <h3 className="text-xl font-semibold mt-4">Order Does Not Matter</h3>
+          <pre className={codeClass}>
+            <code>{exKeywordAnyOrder}</code>
+          </pre>
+        </section>
 
-      {/* POSITIONAL ARGUMENTS */}
-      <section>
-        <h2 className="text-2xl font-semibold">Positional Arguments</h2>
-        <p className="mt-2">Arguments must be in correct order.</p>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exPositional}</code></pre>
+        {/* POSITIONAL ARGUMENTS */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Positional Arguments
+          </h2>
+          <p className="mt-2">
+            In positional arguments, the <strong>order</strong> decides which
+            value goes to which parameter.
+          </p>
+          <pre className={codeClass}>
+            <code>{exPositional}</code>
+          </pre>
 
-        <h3 className="text-xl font-semibold mt-4">Wrong Order Example</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exPositionalWrong}</code></pre>
-      </section>
+          <h3 className="text-xl font-semibold mt-4">Wrong Order Example</h3>
+          <pre className={codeClass}>
+            <code>{exPositionalWrong}</code>
+          </pre>
+        </section>
 
-      {/* MIXING */}
-      <section>
-        <h2 className="text-2xl font-semibold">Mixing Positional and Keyword Arguments</h2>
-        <p className="mt-2">
-          Positional arguments must come before keyword arguments.
-        </p>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exMixing}</code></pre>
-      </section>
+        {/* MIXING */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Mixing Positional and Keyword Arguments
+          </h2>
+          <p className="mt-2">
+            <strong>Rule:</strong> positional arguments must always come{" "}
+            <strong>before</strong> keyword arguments.
+          </p>
+          <pre className={codeClass}>
+            <code>{exMixing}</code>
+          </pre>
+        </section>
 
-      {/* DATA TYPES */}
-      <section>
-        <h2 className="text-2xl font-semibold">Passing Different Data Types</h2>
-        <h3 className="text-xl font-semibold mt-3">List as Argument</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exListArg}</code></pre>
+        {/* DATA TYPES */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Passing Different Data Types
+          </h2>
 
-        <h3 className="text-xl font-semibold mt-4">Dictionary as Argument</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exDictArg}</code></pre>
-      </section>
+          <h3 className="text-xl font-semibold mt-3">List as Argument</h3>
+          <pre className={codeClass}>
+            <code>{exListArg}</code>
+          </pre>
 
-      {/* RETURN VALUES */}
-      <section>
-        <h2 className="text-2xl font-semibold">Return Values</h2>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exReturnBasic}</code></pre>
+          <h3 className="text-xl font-semibold mt-4">Dictionary as Argument</h3>
+          <pre className={codeClass}>
+            <code>{exDictArg}</code>
+          </pre>
+        </section>
 
-        <h3 className="text-xl font-semibold mt-4">Returning a List</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exReturnList}</code></pre>
+        {/* RETURN VALUES */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Return Values
+          </h2>
+          <p className="mt-2">
+            Use <code>return</code> to send data back from a function.
+          </p>
+          <pre className={codeClass}>
+            <code>{exReturnBasic}</code>
+          </pre>
 
-        <h3 className="text-xl font-semibold mt-4">Returning a Tuple</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exReturnTuple}</code></pre>
-      </section>
+          <h3 className="text-xl font-semibold mt-4">Returning a List</h3>
+          <pre className={codeClass}>
+            <code>{exReturnList}</code>
+          </pre>
 
-      {/* POSITIONAL ONLY */}
-      <section>
-        <h2 className="text-2xl font-semibold">Positional-Only Arguments</h2>
-        <p className="mt-2">Arguments before <strong>/</strong> can ONLY be positional.</p>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exPosOnly}</code></pre>
+          <h3 className="text-xl font-semibold mt-4">Returning a Tuple</h3>
+          <pre className={codeClass}>
+            <code>{exReturnTuple}</code>
+          </pre>
+        </section>
 
-        <h3 className="text-xl font-semibold mt-4">Error Example</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exPosOnlyErr}</code></pre>
-      </section>
+        {/* POSITIONAL ONLY */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Positional-Only Arguments
+          </h2>
+          <p className="mt-2">
+            Arguments before <strong>/</strong> are{" "}
+            <strong>positional-only</strong>. They cannot be passed as keyword
+            arguments.
+          </p>
+          <pre className={codeClass}>
+            <code>{exPosOnly}</code>
+          </pre>
 
-      {/* KEYWORD ONLY */}
-      <section>
-        <h2 className="text-2xl font-semibold">Keyword-Only Arguments</h2>
-        <p className="mt-2">Arguments after <strong>*</strong> must be keyword arguments.</p>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exKeyOnly}</code></pre>
+          <h3 className="text-xl font-semibold mt-4">Error Example</h3>
+          <pre className={codeClass}>
+            <code>{exPosOnlyErr}</code>
+          </pre>
+        </section>
 
-        <h3 className="text-xl font-semibold mt-4">Error Example</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exKeyOnlyErr}</code></pre>
-      </section>
+        {/* KEYWORD ONLY */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Keyword-Only Arguments
+          </h2>
+          <p className="mt-2">
+            Arguments after <strong>*</strong> are <strong>keyword-only</strong>
+            . You must call them using the parameter name.
+          </p>
+          <pre className={codeClass}>
+            <code>{exKeyOnly}</code>
+          </pre>
 
-      {/* COMBINED */}
-      <section>
-        <h2 className="text-2xl font-semibold">
-          Combining Positional-Only and Keyword-Only
-        </h2>
-        <p className="mt-2">
-          Arguments before <strong>/</strong> are positional-only,
-          arguments after <strong>*</strong> are keyword-only.
-        </p>
+          <h3 className="text-xl font-semibold mt-4">Error Example</h3>
+          <pre className={codeClass}>
+            <code>{exKeyOnlyErr}</code>
+          </pre>
+        </section>
 
-        <pre className="p-3 rounded border bg-gray-50 mt-4"><code>{exBoth}</code></pre>
-      </section>
+        {/* COMBINED */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Combining Positional-Only and Keyword-Only
+          </h2>
+          <p className="mt-2">
+            Here, <code>a</code> and <code>b</code> are positional-only, and{" "}
+            <code>c</code>, <code>d</code> are keyword-only.
+          </p>
 
-    </article>
+          <pre className={codeClass}>
+            <code>{exBoth}</code>
+          </pre>
+        </section>
+      </div>
+    </div>
   );
 }

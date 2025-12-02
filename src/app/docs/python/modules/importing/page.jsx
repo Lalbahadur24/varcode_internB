@@ -1,142 +1,154 @@
 import React from "react";
 
 export default function ImportingModules() {
-  const dq = String.fromCharCode(34);        // "
-  const obr = String.fromCharCode(123);      // {
-  const cbr = String.fromCharCode(125);      // }
-  const op = String.fromCharCode(40);        // (
-  const cp = String.fromCharCode(41);        // )
-  const cln = String.fromCharCode(58);       // :
-  const cm = String.fromCharCode(44);        // ,
-  const dot = String.fromCharCode(46);       // .
-  const pl = String.fromCharCode(43);        // +
-  const lb = String.fromCharCode(91);        // [
-  const rb = String.fromCharCode(93);        // ]
+  const dq = String.fromCharCode(34);
+  const op = String.fromCharCode(40);
+  const cp = String.fromCharCode(41);
+  const dot = String.fromCharCode(46);
+  const cln = String.fromCharCode(58);
+  const lb = String.fromCharCode(91);
+  const rb = String.fromCharCode(93);
 
-  /* EXAMPLES */
+  const exBasicImport = `import mymodule
 
-  const exBasicImport =
-`import mymodule
+mymodule.greeting("Jonathan")`;
 
-mymodule${dot}greeting${op}${dq}Jonathan${dq}${cp}`;
+  const exAlias = `import mymodule as mx
 
-  const exAlias =
-`import mymodule as mx
+a = mx.person1["age"]
+print(a)`;
 
-a ${cln} mx${dot}person1${lb}${dq}age${dq}${rb}
-print${op}a${cp}`;
+  const exFromImport = `from mymodule import person1
 
-  const exFromImport =
-`from mymodule import person1
+print(person1["age"])`;
 
-print${op}person1${lb}${dq}age${dq}${rb}${cp}`;
+  const exPlatform = `import platform
 
-  const exPlatform =
-`import platform
+x = platform.system()
+print(x)`;
 
-x ${cln} platform${dot}system${op}${cp}
-print${op}x${cp}`;
+  const exDir = `import platform
 
-  const exDir =
-`import platform
+x = dir(platform)
+print(x)`;
 
-x ${cln} dir${op}platform${cp}
-print${op}x${cp}`;
+  const codeClass =
+    "mt-3 border border-gray-200 bg-white rounded-lg p-4 font-mono text-sm leading-7 overflow-x-auto border-l-4 border-[#4a0080]";
 
   return (
-    <article className="max-w-4xl mx-auto p-6 space-y-10">
-      
-      <h1 className="text-4xl font-bold">Python Importing Modules — Full Cheat Sheet</h1>
+    <div className="space-y-6">
+      {/* TITLE */}
+      <h1 className="text-4xl font-extrabold text-[#4a0080]">
+        Python Importing Modules — Full Cheat Sheet
+      </h1>
 
-      {/* INTRO */}
-      <section>
-        <h2 className="text-2xl font-semibold">Importing a Module</h2>
-        <p className="mt-2">
-          After creating a module, you can bring it into your program using the 
-          <strong> import </strong> statement.
-        </p>
-        <pre className="p-3 rounded border bg-gray-50 mt-3">
-          <code>{exBasicImport}</code>
-        </pre>
+      <div className="text-slate-700 leading-relaxed space-y-10">
+        {/* BASIC IMPORT */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Importing a Module
+          </h2>
+          <p className="mt-2">
+            After creating a Python module, you can include it in another
+            program using the <strong>import</strong> statement.
+          </p>
 
-        <p className="mt-2">
-          Always call functions using:
-          <br />
-          <strong>module_name.function_name</strong>
-        </p>
-      </section>
+          <pre className={codeClass}>
+            <code>{exBasicImport}</code>
+          </pre>
 
-      {/* ALIAS */}
-      <section>
-        <h2 className="text-2xl font-semibold">Creating an Alias (as keyword)</h2>
-        <p className="mt-2">
-          You can rename a module while importing it using the  
-          <strong> as </strong> keyword. This is useful when the module name is long.
-        </p>
+          <p className="mt-2">
+            Always call functions using:
+            <br />
+            <strong>module_name.function_name</strong>
+          </p>
+        </section>
 
-        <pre className="p-3 rounded border bg-gray-50 mt-3">
-          <code>{exAlias}</code>
-        </pre>
-      </section>
+        {/* ALIAS */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Creating an Alias (as keyword)
+          </h2>
+          <p className="mt-2">
+            The <strong>as</strong> keyword lets you rename a module at import
+            time. Helpful when module names are long.
+          </p>
 
-      {/* FROM IMPORT */}
-      <section>
-        <h2 className="text-2xl font-semibold">Import Specific Items</h2>
-        <p className="mt-2">
-          Using the <strong>from</strong> keyword, you can import only the items you need:
-        </p>
+          <pre className={codeClass}>
+            <code>{exAlias}</code>
+          </pre>
+        </section>
 
-        <pre className="p-3 rounded border bg-gray-50 mt-3">
-          <code>{exFromImport}</code>
-        </pre>
+        {/* FROM IMPORT */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Import Specific Items
+          </h2>
+          <p className="mt-2">
+            Using the <strong>from</strong> keyword, you can import only what
+            you need.
+          </p>
 
-        <p className="mt-3">
-          When importing specific items, you can use them <strong>directly</strong> 
-          without writing the module name.
-        </p>
-      </section>
+          <pre className={codeClass}>
+            <code>{exFromImport}</code>
+          </pre>
 
-      {/* BUILT-IN MODULES */}
-      <section>
-        <h2 className="text-2xl font-semibold">Importing Built-in Modules</h2>
-        <p className="mt-2">
-          Python includes many modules by default, such as <strong>platform</strong>, 
-          <strong>math</strong>, <strong>os</strong>, <strong>random</strong>, and more.
-        </p>
+          <p className="mt-3">
+            After importing specific items, you can use them
+            <strong> directly</strong> without writing the module name.
+          </p>
+        </section>
 
-        <pre className="p-3 rounded border bg-gray-50 mt-3">
-          <code>{exPlatform}</code>
-        </pre>
-      </section>
+        {/* BUILT-IN MODULES */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Importing Built-in Modules
+          </h2>
+          <p className="mt-2">
+            Python includes many useful built-in modules such as
+            <strong> platform</strong>, <strong>math</strong>,{" "}
+            <strong>random</strong>,<strong> os</strong>, etc.
+          </p>
 
-      {/* dir() FUNCTION */}
-      <section>
-        <h2 className="text-2xl font-semibold">Using the dir() Function</h2>
-        <p className="mt-2">
-          The <strong>dir()</strong> function returns a list of all variables, classes, and 
-          functions defined inside a module.
-        </p>
+          <pre className={codeClass}>
+            <code>{exPlatform}</code>
+          </pre>
+        </section>
 
-        <pre className="p-3 rounded border bg-gray-50 mt-3">
-          <code>{exDir}</code>
-        </pre>
+        {/* DIR FUNCTION */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Using the dir() Function
+          </h2>
+          <p className="mt-2">
+            The <strong>dir()</strong> function lists all functions, classes,
+            and variables inside a module.
+          </p>
 
-        <p className="mt-3">
-          You can use <strong>dir()</strong> on any module — built-in or user-defined.
-        </p>
-      </section>
+          <pre className={codeClass}>
+            <code>{exDir}</code>
+          </pre>
 
-      {/* WHY IMPORT */}
-      <section>
-        <h2 className="text-2xl font-semibold">Why Import Modules?</h2>
-        <ul className="list-disc ml-6 mt-3 space-y-1">
-          <li>Helps reuse code written in other files</li>
-          <li>Makes programs more organized</li>
-          <li>Allows access to Python's built-in utilities</li>
-          <li>Avoids rewriting the same functions repeatedly</li>
-        </ul>
-      </section>
+          <p className="mt-3">
+            You can use <strong>dir()</strong> on any module — built-in or
+            user-defined.
+          </p>
+        </section>
 
-    </article>
+        {/* WHY IMPORT */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Why Import Modules?
+          </h2>
+
+          <ul className="list-disc ml-6 mt-3 space-y-1">
+            <li>Reuse code across files</li>
+            <li>Organize programs better</li>
+            <li>Access Python’s built-in functionality</li>
+            <li>Avoid repeating functions unnecessarily</li>
+          </ul>
+        </section>
+      </div>
+    </div>
   );
 }

@@ -83,146 +83,243 @@ del thisset`;
     ["intersection()", "Returns items common to both sets."],
     ["intersection_update()", "Removes items not present in all sets."],
     ["isdisjoint()", "Returns True if sets have no common items."],
-    ["issubset()", "Returns True if all items of this set exist in another set."],
-    ["issuperset()", "Returns True if this set contains all items of another set."],
+    [
+      "issubset()",
+      "Returns True if all items of this set exist in another set.",
+    ],
+    [
+      "issuperset()",
+      "Returns True if this set contains all items of another set.",
+    ],
     ["pop()", "Removes a random item from the set."],
     ["remove()", "Removes a specific item, error if missing."],
     ["symmetric_difference()", "Returns items NOT common in both sets."],
     ["symmetric_difference_update()", "Updates set with symmetric difference."],
     ["union()", "Returns a new set with items from all sets."],
-    ["update()", "Adds items from other iterables to the set."]
+    ["update()", "Adds items from other iterables to the set."],
   ];
 
+  const codeClass =
+    "mt-3 border border-gray-200 bg-white rounded-lg p-4 font-mono text-sm leading-7 overflow-x-auto border-l-4 border-[#4a0080]";
+
   return (
-    <article className="max-w-4xl mx-auto p-6 space-y-10">
-      <h1 className="text-4xl font-bold">Python Sets — Full Notes</h1>
+    <div className="space-y-6">
+      {/* Title */}
+      <h1 className="text-4xl font-extrabold text-[#4a0080]">
+        Python Sets — Full Notes
+      </h1>
 
-      {/* INTRO */}
-      <section>
-        <h2 className="text-2xl font-semibold">What is a Set?</h2>
-        <p className="mt-2">
-          A <strong>set</strong> is an unordered collection of unique items.  
-          Sets are used to store multiple items in a single variable and are written using
-          <strong> curly braces {'{}'}</strong>.
-        </p>
+      <p className="text-slate-700 leading-relaxed">
+        A <strong>set</strong> is an unordered collection of unique items. Sets
+        are used to store multiple items in a single variable and are written
+        using <strong>curly braces {"{}"}</strong>.
+      </p>
 
-        <p className="mt-3">Basic set example:</p>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exSet}</code></pre>
+      <div className="space-y-10 text-slate-700 leading-relaxed">
+        {/* INTRO */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            What is a Set?
+          </h2>
 
-        <h3 className="text-xl font-semibold mt-4">Display a Set</h3>
-        <p>Since sets are unordered, the output order may differ each time.</p>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exCreate}</code></pre>
-      </section>
+          <p className="mt-2">Basic set example:</p>
+          <pre className={codeClass}>
+            <code>{exSet}</code>
+          </pre>
 
-      {/* DUPLICATES */}
-      <section>
-        <h2 className="text-xl font-semibold">Duplicate Values Are Not Allowed</h2>
-        <p className="mt-2">If duplicate values appear, Python removes the duplicates automatically.</p>
+          <h3 className="text-xl font-semibold mt-4">Display a Set</h3>
+          <p className="mt-1">
+            Since sets are unordered, the output order may differ each time.
+          </p>
+          <pre className={codeClass}>
+            <code>{exCreate}</code>
+          </pre>
+        </section>
 
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exDup}</code></pre>
+        {/* DUPLICATES */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Duplicate Values Are Not Allowed
+          </h2>
+          <p className="mt-2">
+            If duplicate values appear, Python removes the duplicates
+            automatically.
+          </p>
 
-        <p className="mt-4">
-          <strong>True</strong> and <strong>1</strong> are treated as the same value in sets:
-        </p>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exTrue1}</code></pre>
+          <pre className={codeClass}>
+            <code>{exDup}</code>
+          </pre>
 
-        <p className="mt-4">
-          <strong>False</strong> and <strong>0</strong> are also duplicates:
-        </p>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exFalse0}</code></pre>
-      </section>
+          <p className="mt-4">
+            <strong>True</strong> and <strong>1</strong> are treated as the same
+            value in sets:
+          </p>
+          <pre className={codeClass}>
+            <code>{exTrue1}</code>
+          </pre>
 
-      {/* LENGTH */}
-      <section>
-        <h2 className="text-xl font-semibold">Length of a Set</h2>
-        <p className="mt-2">Use <code>len()</code> to get the number of items in a set.</p>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exLen}</code></pre>
-      </section>
+          <p className="mt-4">
+            <strong>False</strong> and <strong>0</strong> are also duplicates:
+          </p>
+          <pre className={codeClass}>
+            <code>{exFalse0}</code>
+          </pre>
+        </section>
 
-      {/* DATA TYPES */}
-      <section>
-        <h2 className="text-xl font-semibold">Set Data Types</h2>
-        <p className="mt-2">Sets can store different data types, including mixed types.</p>
+        {/* LENGTH */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Length of a Set
+          </h2>
+          <p className="mt-2">
+            Use <code>len()</code> to get the number of items in a set.
+          </p>
+          <pre className={codeClass}>
+            <code>{exLen}</code>
+          </pre>
+        </section>
 
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exTypes}</code></pre>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exMixed}</code></pre>
+        {/* DATA TYPES */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Set Data Types
+          </h2>
+          <p className="mt-2">
+            Sets can store different data types, including mixed types.
+          </p>
 
-        <h3 className="text-xl font-semibold mt-4">Create Sets Using set() Constructor</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exConstructor}</code></pre>
-      </section>
+          <pre className={codeClass}>
+            <code>{exTypes}</code>
+          </pre>
+          <pre className={codeClass}>
+            <code>{exMixed}</code>
+          </pre>
 
-      {/* ACCESS */}
-      <section>
-        <h2 className="text-2xl font-semibold">Access Set Items</h2>
-        <p className="mt-2">
-          Sets do not support indexing or key-based access.  
-          You must loop through the set or use the <code>in</code> keyword.
-        </p>
+          <h3 className="text-xl font-semibold mt-4">
+            Create Sets Using set() Constructor
+          </h3>
+          <pre className={codeClass}>
+            <code>{exConstructor}</code>
+          </pre>
+        </section>
 
-        <h3 className="text-lg font-semibold mt-3">Loop Through a Set</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exLoop}</code></pre>
+        {/* ACCESS */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Access Set Items
+          </h2>
+          <p className="mt-2">
+            Sets do not support indexing or key-based access. You must loop
+            through the set or use the <code>in</code> keyword.
+          </p>
 
-        <h3 className="text-lg font-semibold mt-4">Check Membership</h3>
-        <pre className="p-3mt-3 rounded border bg-gray-50"><code>{exIn}</code></pre>
-        <pre className="p-3mt-3 rounded border bg-gray-50"><code>{exNotIn}</code></pre>
-      </section>
+          <h3 className="text-lg font-semibold mt-3">Loop Through a Set</h3>
+          <pre className={codeClass}>
+            <code>{exLoop}</code>
+          </pre>
 
-      {/* ADD ITEMS */}
-      <section>
-        <h2 className="text-2xl font-semibold">Add Items to a Set</h2>
+          <h3 className="text-lg font-semibold mt-4">Check Membership</h3>
+          <pre className={codeClass}>
+            <code>{exIn}</code>
+          </pre>
+          <pre className={codeClass}>
+            <code>{exNotIn}</code>
+          </pre>
+        </section>
 
-        <h3 className="text-lg font-semibold mt-2">Add a Single Item</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exAdd}</code></pre>
+        {/* ADD ITEMS */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Add Items to a Set
+          </h2>
 
-        <h3 className="text-lg font-semibold mt-4">Add Items From Another Set</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exUpdate}</code></pre>
+          <h3 className="text-lg font-semibold mt-2">Add a Single Item</h3>
+          <pre className={codeClass}>
+            <code>{exAdd}</code>
+          </pre>
 
-        <h3 className="text-lg font-semibold mt-4">Add Items From an Iterable (List, Tuple, etc.)</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exUpdateList}</code></pre>
-      </section>
+          <h3 className="text-lg font-semibold mt-4">
+            Add Items From Another Set
+          </h3>
+          <pre className={codeClass}>
+            <code>{exUpdate}</code>
+          </pre>
 
-      {/* REMOVE ITEMS */}
-      <section>
-        <h2 className="text-2xl font-semibold">Remove Items From a Set</h2>
+          <h3 className="text-lg font-semibold mt-4">
+            Add Items From an Iterable (List, Tuple, etc.)
+          </h3>
+          <pre className={codeClass}>
+            <code>{exUpdateList}</code>
+          </pre>
+        </section>
 
-        <h3 className="text-lg font-semibold mt-2">remove() — Error if item missing</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exRemove}</code></pre>
+        {/* REMOVE ITEMS */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Remove Items From a Set
+          </h2>
 
-        <h3 className="text-lg font-semibold mt-4">discard() — No error if missing</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exDiscard}</code></pre>
+          <h3 className="text-lg font-semibold mt-2">
+            remove() — Error if item missing
+          </h3>
+          <pre className={codeClass}>
+            <code>{exRemove}</code>
+          </pre>
 
-        <h3 className="text-lg font-semibold mt-4">pop() — Removes a random item</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exPop}</code></pre>
+          <h3 className="text-lg font-semibold mt-4">
+            discard() — No error if missing
+          </h3>
+          <pre className={codeClass}>
+            <code>{exDiscard}</code>
+          </pre>
 
-        <h3 className="text-lg font-semibold mt-4">clear() — Empty the set</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exClear}</code></pre>
+          <h3 className="text-lg font-semibold mt-4">
+            pop() — Removes a random item
+          </h3>
+          <pre className={codeClass}>
+            <code>{exPop}</code>
+          </pre>
 
-        <h3 className="text-lg font-semibold mt-4">del — Delete the set completely</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exDel}</code></pre>
-      </section>
+          <h3 className="text-lg font-semibold mt-4">
+            clear() — Empty the set
+          </h3>
+          <pre className={codeClass}>
+            <code>{exClear}</code>
+          </pre>
 
-      {/* METHODS */}
-      <section>
-        <h2 className="text-2xl font-semibold">Set Methods</h2>
-        <p className="mt-2">These are the built-in methods available for sets:</p>
+          <h3 className="text-lg font-semibold mt-4">
+            del — Delete the set completely
+          </h3>
+          <pre className={codeClass}>
+            <code>{exDel}</code>
+          </pre>
+        </section>
 
-        <table className="w-full border mt-3 text-left">
-          <thead>
-            <tr className="bg-gray-200">
-              <th className="border p-2">Method</th>
-              <th className="border p-2">Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            {methods.map(([name, desc], i) => (
-              <tr key={i}>
-                <td className="border p-2 font-mono">{name}</td>
-                <td className="border p-2">{desc}</td>
+        {/* METHODS */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">Set Methods</h2>
+          <p className="mt-2">
+            These are the built-in methods available for sets:
+          </p>
+
+          <table className="w-full border mt-3 text-left">
+            <thead>
+              <tr className="bg-gray-200">
+                <th className="border p-2">Method</th>
+                <th className="border p-2">Description</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </section>
-    </article>
+            </thead>
+            <tbody>
+              {methods.map(([name, desc], i) => (
+                <tr key={i}>
+                  <td className="border p-2 font-mono">{name}</td>
+                  <td className="border p-2">{desc}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </div>
   );
 }

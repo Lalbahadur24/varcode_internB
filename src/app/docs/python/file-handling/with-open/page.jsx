@@ -3,6 +3,9 @@ import React from "react";
 export default function PythonWithOpen() {
   const dq = String.fromCharCode(34);
 
+  const codeClass =
+    "mt-3 border border-gray-200 bg-white rounded-lg p-4 font-mono text-sm leading-7 overflow-x-auto border-l-4 border-[#4a0080]";
+
   // EXAMPLES
   const exBasic = `with open(${dq}demofile.txt${dq}) as f:
   print(f.read())`;
@@ -25,106 +28,161 @@ export default function PythonWithOpen() {
   f2.write(data)`;
 
   return (
-    <article className="max-w-4xl mx-auto p-6 space-y-10">
-      <h1 className="text-4xl font-bold">Python {dq}with open(){dq} — Full Cheat Sheet</h1>
+    <div className="space-y-6">
+      {/* TITLE */}
+      <h1 className="text-4xl font-extrabold text-[#4a0080]">
+        Python {dq}with open(){dq} — Full Cheat Sheet
+      </h1>
 
-      {/* INTRO */}
-      <section>
-        <h2 className="text-2xl font-semibold">What is {dq}with open(){dq}?</h2>
-        <p className="mt-2 leading-7">
-          The <strong>with</strong> statement in Python is used to automatically manage resources
-          like files. When using <strong>with open()</strong>, Python opens the file,
-          lets you work with it, and <strong>automatically closes it</strong> when done—
-          even if exceptions occur.
-        </p>
+      <div className="space-y-10 text-slate-700 leading-relaxed">
+        {/* INTRO */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            What is {dq}with open(){dq}?
+          </h2>
+          <p className="mt-2">
+            The <strong>with</strong> statement in Python automatically manages
+            resources like files. When using <strong>with open()</strong>,
+            Python opens the file, lets you work with it, and{" "}
+            <strong>automatically closes it</strong> — even if exceptions occur.
+          </p>
 
-        <p className="mt-2">
-          This eliminates the need to manually call <code>f.close()</code>, making code cleaner,
-          safer, and more professional.
-        </p>
-      </section>
+          <p className="mt-2">
+            This makes your code cleaner, safer, and avoids having to manually
+            call <code>f.close()</code>.
+          </p>
+        </section>
 
-      {/* BASIC USAGE */}
-      <section>
-        <h2 className="text-2xl font-semibold">Basic Usage</h2>
-        <p className="mt-2">Most common way to open and read a file:</p>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exBasic}</code></pre>
-      </section>
+        {/* BASIC USAGE */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">Basic Usage</h2>
+          <p className="mt-2">Most common way to open and read a file:</p>
+          <pre className={codeClass}>
+            <code>{exBasic}</code>
+          </pre>
+        </section>
 
-      {/* WHY USE WITH OPEN */}
-      <section>
-        <h2 className="text-2xl font-semibold">Why Use {dq}with open(){dq}?</h2>
-        <ul className="list-disc ml-6 mt-3 leading-7">
-          <li>Automatically closes the file</li>
-          <li>Prevents memory leaks</li>
-          <li>Avoids forgetting <code>f.close()</code></li>
-          <li>Cleaner and more readable code</li>
-          <li>Handles exceptions safely</li>
-        </ul>
-      </section>
+        {/* WHY USE WITH OPEN */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Why Use {dq}with open(){dq}?
+          </h2>
+          <ul className="list-disc ml-6 mt-3 leading-7">
+            <li>Automatically closes the file</li>
+            <li>Prevents memory leaks</li>
+            <li>
+              Avoids forgetting <code>f.close()</code>
+            </li>
+            <li>Cleaner and more readable code</li>
+            <li>Handles exceptions safely</li>
+          </ul>
+        </section>
 
-      {/* WRITE FILE */}
-      <section>
-        <h2 className="text-2xl font-semibold">Write to a File</h2>
-        <p className="mt-2">Using mode <strong>w</strong> will overwrite the file.</p>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exWrite}</code></pre>
-      </section>
+        {/* WRITE FILE */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Write to a File
+          </h2>
+          <p className="mt-2">
+            Using mode <strong>w</strong> will overwrite the file.
+          </p>
+          <pre className={codeClass}>
+            <code>{exWrite}</code>
+          </pre>
+        </section>
 
-      {/* APPEND */}
-      <section>
-        <h2 className="text-2xl font-semibold">Append to a File</h2>
-        <p className="mt-2">Using mode <strong>a</strong> will add content at the end.</p>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exAppend}</code></pre>
-      </section>
+        {/* APPEND */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Append to a File
+          </h2>
+          <p className="mt-2">
+            Using mode <strong>a</strong> will add content at the end.
+          </p>
+          <pre className={codeClass}>
+            <code>{exAppend}</code>
+          </pre>
+        </section>
 
-      {/* READ LINE */}
-      <section>
-        <h2 className="text-2xl font-semibold">Read Only One Line</h2>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exReadLine}</code></pre>
-      </section>
+        {/* READ LINE */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Read Only One Line
+          </h2>
+          <pre className={codeClass}>
+            <code>{exReadLine}</code>
+          </pre>
+        </section>
 
-      {/* LOOP LINES */}
-      <section>
-        <h2 className="text-2xl font-semibold">Loop Through All Lines</h2>
-        <pre className="p-3 rounded border bg-gray-50 mt-2 whitespace-pre-line"><code>{exLoop}</code></pre>
-      </section>
+        {/* LOOP LINES */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Loop Through All Lines
+          </h2>
+          <pre className={codeClass}>
+            <code>{exLoop}</code>
+          </pre>
+        </section>
 
-      {/* MULTIPLE FILES */}
-      <section>
-        <h2 className="text-2xl font-semibold">Open Multiple Files</h2>
-        <pre className="p-3 rounded border bg-gray-50 mt-2 whitespace-pre-line"><code>{exMultiple}</code></pre>
-      </section>
+        {/* MULTIPLE FILES */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Open Multiple Files
+          </h2>
+          <pre className={codeClass}>
+            <code>{exMultiple}</code>
+          </pre>
+        </section>
 
-      {/* SUMMARY TABLE */}
-      <section>
-        <h2 className="text-2xl font-semibold">Summary</h2>
+        {/* SUMMARY TABLE */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">Summary</h2>
 
-        <table className="w-full border mt-3 text-left">
-          <thead>
-            <tr className="bg-gray-200">
-              <th className="border p-2">Mode</th>
-              <th className="border p-2">Meaning</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td className="border p-2 font-mono">r</td><td className="border p-2">Read (default)</td></tr>
-            <tr><td className="border p-2 font-mono">w</td><td className="border p-2">Write (overwrite)</td></tr>
-            <tr><td className="border p-2 font-mono">a</td><td className="border p-2">Append to end</td></tr>
-            <tr><td className="border p-2 font-mono">x</td><td className="border p-2">Create file (error if exists)</td></tr>
-            <tr><td className="border p-2 font-mono">t</td><td className="border p-2">Text mode (default)</td></tr>
-            <tr><td className="border p-2 font-mono">b</td><td className="border p-2">Binary mode</td></tr>
-          </tbody>
-        </table>
-      </section>
+          <table className="w-full border mt-3 text-left">
+            <thead>
+              <tr className="bg-gray-200">
+                <th className="border p-2">Mode</th>
+                <th className="border p-2">Meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border p-2 font-mono">r</td>
+                <td className="border p-2">Read (default)</td>
+              </tr>
+              <tr>
+                <td className="border p-2 font-mono">w</td>
+                <td className="border p-2">Write (overwrite)</td>
+              </tr>
+              <tr>
+                <td className="border p-2 font-mono">a</td>
+                <td className="border p-2">Append to end</td>
+              </tr>
+              <tr>
+                <td className="border p-2 font-mono">x</td>
+                <td className="border p-2">Create file (error if exists)</td>
+              </tr>
+              <tr>
+                <td className="border p-2 font-mono">t</td>
+                <td className="border p-2">Text mode (default)</td>
+              </tr>
+              <tr>
+                <td className="border p-2 font-mono">b</td>
+                <td className="border p-2">Binary mode</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
 
-      {/* FINAL NOTE */}
-      <section>
-        <h2 className="text-2xl font-semibold">Final Note</h2>
-        <p className="mt-2">
-          Always use <strong>with open()</strong> unless there is a very specific reason not to.
-          It is the safest, cleanest, most Pythonic way to work with files.
-        </p>
-      </section>
-    </article>
+        {/* FINAL NOTE */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">Final Note</h2>
+          <p className="mt-2">
+            Always use <strong>with open()</strong>. It is the safest, cleanest,
+            and most Pythonic way to work with files.
+          </p>
+        </section>
+      </div>
+    </div>
   );
 }

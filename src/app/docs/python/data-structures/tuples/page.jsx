@@ -59,151 +59,243 @@ print(thistuple)`;
 (green, *tropic, red) = fruits`;
 
   const methods = [
-    { name: "count()", desc: "Returns the number of times a value occurs in a tuple." },
-    { name: "index()", desc: "Returns the index of the first occurrence of a value." }
+    {
+      name: "count()",
+      desc: "Returns the number of times a value occurs in a tuple.",
+    },
+    {
+      name: "index()",
+      desc: "Returns the index of the first occurrence of a value.",
+    },
   ];
 
+  const codeClass =
+    "mt-3 border border-gray-200 bg-white rounded-lg p-4 font-mono text-sm leading-7 overflow-x-auto border-l-4 border-[#4a0080]";
+
   return (
-    <article className="max-w-4xl mx-auto p-6 space-y-10">
-      <h1 className="text-4xl font-bold">Python Tuples — Full Notes</h1>
+    <div className="space-y-6">
+      {/* Title */}
+      <h1 className="text-4xl font-extrabold text-[#4a0080]">
+        Python Tuples — Full Notes
+      </h1>
 
-      {/* BASICS */}
-      <section>
-        <h2 className="text-2xl font-semibold">What is a Tuple?</h2>
-        <p className="mt-2">
-          A <strong>tuple</strong> is an ordered, unchangeable collection in Python.  
-          Tuples are used to store multiple items in a single variable and are written using
-          <strong> round brackets ( )</strong>.
-        </p>
+      <p className="text-slate-700 leading-relaxed">
+        A <strong>tuple</strong> is an ordered, unchangeable collection in
+        Python. Tuples are used to store multiple items in a single variable and
+        are written using <strong>round brackets ( )</strong>.
+      </p>
 
-        <p className="mt-3">Example of creating a tuple:</p>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exTuple}</code></pre>
+      <div className="space-y-10 text-slate-700 leading-relaxed">
+        {/* BASICS */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            What is a Tuple?
+          </h2>
 
-        <h3 className="text-xl font-semibold mt-4">Printing a Tuple</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exCreate}</code></pre>
-      </section>
+          <p className="mt-2">Example of creating a tuple:</p>
+          <pre className={codeClass}>
+            <code>{exTuple}</code>
+          </pre>
 
-      {/* DUPLICATES */}
-      <section>
-        <h2 className="text-xl font-semibold">Tuples Allow Duplicate Values</h2>
-        <p className="mt-1">
-          Since tuples are indexed, duplicate values are allowed.
-        </p>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exDup}</code></pre>
-      </section>
+          <h3 className="text-xl font-semibold mt-4">Printing a Tuple</h3>
+          <pre className={codeClass}>
+            <code>{exCreate}</code>
+          </pre>
+        </section>
 
-      {/* LENGTH */}
-      <section>
-        <h2 className="text-xl font-semibold">Tuple Length</h2>
-        <p className="mt-2">Use <code>len()</code> to get the number of elements in a tuple.</p>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exLen}</code></pre>
-      </section>
+        {/* DUPLICATES */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Tuples Allow Duplicate Values
+          </h2>
+          <p className="mt-2">
+            Since tuples are indexed, duplicate values are allowed.
+          </p>
+          <pre className={codeClass}>
+            <code>{exDup}</code>
+          </pre>
+        </section>
 
-      {/* ONE ITEM */}
-      <section>
-        <h2 className="text-xl font-semibold">Tuple With One Item</h2>
-        <p className="mt-2">
-          A tuple with one item <strong>must</strong> include a comma, otherwise Python treats it as a string.
-        </p>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exOneItem}</code></pre>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exNotTuple}</code></pre>
-      </section>
+        {/* LENGTH */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Tuple Length
+          </h2>
+          <p className="mt-2">
+            Use <code>len()</code> to get the number of elements in a tuple.
+          </p>
+          <pre className={codeClass}>
+            <code>{exLen}</code>
+          </pre>
+        </section>
 
-      {/* DATA TYPES */}
-      <section>
-        <h2 className="text-xl font-semibold">Data Types in Tuples</h2>
-        <p className="mt-2">Tuples can contain any data type, including mixed types.</p>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exDataTypes}</code></pre>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exMixed}</code></pre>
-      </section>
+        {/* ONE ITEM */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Tuple With One Item
+          </h2>
+          <p className="mt-2">
+            A tuple with one item <strong>must</strong> include a comma,
+            otherwise Python treats it as a string.
+          </p>
+          <pre className={codeClass}>
+            <code>{exOneItem}</code>
+          </pre>
+          <pre className={codeClass}>
+            <code>{exNotTuple}</code>
+          </pre>
+        </section>
 
-      {/* TYPE */}
-      <section>
-        <h2 className="text-xl font-semibold">Tuple Type</h2>
-        <p className="mt-2">Tuples belong to the <strong>tuple</strong> data type.</p>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exType}</code></pre>
-      </section>
+        {/* DATA TYPES */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Data Types in Tuples
+          </h2>
+          <p className="mt-2">
+            Tuples can contain any data type, including mixed types.
+          </p>
+          <pre className={codeClass}>
+            <code>{exDataTypes}</code>
+          </pre>
+          <pre className={codeClass}>
+            <code>{exMixed}</code>
+          </pre>
+        </section>
 
-      {/* CONSTRUCTOR */}
-      <section>
-        <h2 className="text-xl font-semibold">tuple() Constructor</h2>
-        <p className="mt-2">
-          You can also create a tuple using the <code>tuple()</code> constructor.
-        </p>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exConstructor}</code></pre>
-      </section>
+        {/* TYPE */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">Tuple Type</h2>
+          <p className="mt-2">
+            Tuples belong to the <strong>tuple</strong> data type.
+          </p>
+          <pre className={codeClass}>
+            <code>{exType}</code>
+          </pre>
+        </section>
 
-      {/* ACCESS */}
-      <section>
-        <h2 className="text-2xl font-semibold">Access Tuple Items</h2>
-        <p className="mt-2">Tuple items can be accessed using indexes or slicing.</p>
+        {/* CONSTRUCTOR */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            tuple() Constructor
+          </h2>
+          <p className="mt-2">
+            You can also create a tuple using the <code>tuple()</code>{" "}
+            constructor.
+          </p>
+          <pre className={codeClass}>
+            <code>{exConstructor}</code>
+          </pre>
+        </section>
 
-        <h3 className="text-lg font-semibold mt-3">Access by Index</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exAccess}</code></pre>
+        {/* ACCESS */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Access Tuple Items
+          </h2>
+          <p className="mt-2">
+            Tuple items can be accessed using indexes or slicing.
+          </p>
 
-        <h3 className="text-lg font-semibold mt-4">Negative Indexing</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exNegative}</code></pre>
+          <h3 className="text-lg font-semibold mt-3">Access by Index</h3>
+          <pre className={codeClass}>
+            <code>{exAccess}</code>
+          </pre>
 
-        <h3 className="text-lg font-semibold mt-4">Range of Indexes</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exRange}</code></pre>
-      </section>
+          <h3 className="text-lg font-semibold mt-4">Negative Indexing</h3>
+          <pre className={codeClass}>
+            <code>{exNegative}</code>
+          </pre>
 
-      {/* UPDATE */}
-      <section>
-        <h2 className="text-2xl font-semibold">Updating Tuples</h2>
-        <p className="mt-2">
-          Tuples are <strong>immutable</strong>, meaning their values cannot be changed directly.
-          However, you can convert a tuple into a list, modify it, and convert it back.
-        </p>
+          <h3 className="text-lg font-semibold mt-4">Range of Indexes</h3>
+          <pre className={codeClass}>
+            <code>{exRange}</code>
+          </pre>
+        </section>
 
-        <h3 className="text-lg font-semibold mt-3">Change Tuple Values (Workaround)</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exChange}</code></pre>
+        {/* UPDATE */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Updating Tuples
+          </h2>
+          <p className="mt-2">
+            Tuples are <strong>immutable</strong>, meaning their values cannot
+            be changed directly. However, you can convert a tuple into a list,
+            modify it, and convert it back.
+          </p>
 
-        <h3 className="text-lg font-semibold mt-4">Add Items (via list)</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exAdd1}</code></pre>
+          <h3 className="text-lg font-semibold mt-3">
+            Change Tuple Values (Workaround)
+          </h3>
+          <pre className={codeClass}>
+            <code>{exChange}</code>
+          </pre>
 
-        <h3 className="text-lg font-semibold mt-4">Add Tuple to Tuple</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exAdd2}</code></pre>
-      </section>
+          <h3 className="text-lg font-semibold mt-4">
+            Add Items (via list conversion)
+          </h3>
+          <pre className={codeClass}>
+            <code>{exAdd1}</code>
+          </pre>
 
-      {/* UNPACK */}
-      <section>
-        <h2 className="text-2xl font-semibold">Tuple Packing & Unpacking</h2>
+          <h3 className="text-lg font-semibold mt-4">Add Tuple to Tuple</h3>
+          <pre className={codeClass}>
+            <code>{exAdd2}</code>
+          </pre>
+        </section>
 
-        <h3 className="text-lg font-semibold mt-2">Packing</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-2"><code>{exPack}</code></pre>
+        {/* UNPACK */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Tuple Packing & Unpacking
+          </h2>
 
-        <h3 className="text-lg font-semibold mt-4">Unpacking</h3>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exUnpack}</code></pre>
+          <h3 className="text-lg font-semibold mt-2">Packing</h3>
+          <pre className={codeClass}>
+            <code>{exPack}</code>
+          </pre>
 
-        <h3 className="text-lg font-semibold mt-4">Using Asterisk (*)</h3>
-        <p className="mt-1">Asterisk collects remaining values as a list.</p>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exAsterisk1}</code></pre>
-        <pre className="p-3 rounded border bg-gray-50 mt-3"><code>{exAsterisk2}</code></pre>
-      </section>
+          <h3 className="text-lg font-semibold mt-4">Unpacking</h3>
+          <pre className={codeClass}>
+            <code>{exUnpack}</code>
+          </pre>
 
-      {/* METHODS */}
-      <section>
-        <h2 className="text-2xl font-semibold">Tuple Methods</h2>
-        <p className="mt-2">Tuples have only two built-in methods.</p>
+          <h3 className="text-lg font-semibold mt-4">Using Asterisk (*)</h3>
+          <p className="mt-1">
+            Asterisk collects remaining values into a list while unpacking.
+          </p>
+          <pre className={codeClass}>
+            <code>{exAsterisk1}</code>
+          </pre>
+          <pre className={codeClass}>
+            <code>{exAsterisk2}</code>
+          </pre>
+        </section>
 
-        <table className="w-full border mt-3 text-left">
-          <thead>
-            <tr className="bg-gray-200">
-              <th className="border p-2">Method</th>
-              <th className="border p-2">Definition</th>
-            </tr>
-          </thead>
-          <tbody>
-            {methods.map((m, i) => (
-              <tr key={i}>
-                <td className="border p-2 font-mono">{m.name}</td>
-                <td className="border p-2">{m.desc}</td>
+        {/* METHODS */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#4a0080]">
+            Tuple Methods
+          </h2>
+          <p className="mt-2">Tuples have only two built-in methods:</p>
+
+          <table className="w-full border mt-3 text-left">
+            <thead>
+              <tr className="bg-gray-200">
+                <th className="border p-2">Method</th>
+                <th className="border p-2">Definition</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </section>
-    </article>
+            </thead>
+            <tbody>
+              {methods.map((m, i) => (
+                <tr key={i}>
+                  <td className="border p-2 font-mono">{m.name}</td>
+                  <td className="border p-2">{m.desc}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </div>
   );
 }

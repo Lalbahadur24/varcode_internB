@@ -41,12 +41,12 @@ const pythonDocsConfig = [
       "Tuples",
       "Sets",
       "Dictionaries",
-      "Comprehensions (list, dict, set)",
+      "Comprehensions",
     ],
   },
   {
-    label: "Functions",
-    href: "/docs/python/functions",
+    label: "Function",
+    href: "/docs/python/function",
     children: [
       "Defining Functions",
       "Arguments",
@@ -85,6 +85,7 @@ const pythonDocsConfig = [
     label: "Object-Oriented Programming",
     href: "/docs/python/oop",
     children: [
+      "What is OOP",
       "Classes",
       "Objects",
       "Inheritance",
