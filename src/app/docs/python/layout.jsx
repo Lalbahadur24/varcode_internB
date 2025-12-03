@@ -19,7 +19,7 @@ const pythonDocsConfig = [
       "Operators",
       "User Input",
       "Typecasting",
-      "Variables",
+      
     ],
   },
   {
